@@ -16,136 +16,129 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="page-header">
-        <h1>Stegify</h1>
-      </div>
+    <div class="page-header">
+      <h1>Stegify</h1>
+    </div>
 
-     <div class="nav-elements"> 
+    <div class="nav-elements">
       <ul class="nav nav-pills" id="tabs" data-tabs="tabs">
         <li role="presentation" class="nav-item active">
-          <a href="#encode" class= "nav-link" data-toggle="tab">Encode</a>
+          <a href="#encode" class="nav-link" data-toggle="tab">Encode</a>
         </li>
         <li role="presentation" class="nav-item">
-          <a href="#decode" class= "nav-link" data-toggle="tab">Decode</a>
+          <a href="#decode" class="nav-link" data-toggle="tab">Decode</a>
+        </li>
+        <li role="presentation" class="nav-item">
+          <a href="#about" class="nav-link" data-toggle="tab">About</a>
         </li>
       </ul>
-      </div>
-
-      <div id="my-tab-content" class="container tab-content">
-        <div class="tab-pane active" id="encode">
-          <div>
-            <h2>Encode Message</h2>
-            <p class="alert alert-info">
-              &#x2022; To encode a message into an image, choose the image you want to
-              use, enter your text and hit the <strong>Encode</strong> button.
-              <br />
-              
-              &#x2022; Keep in mind that the image needs to be larger the more text you wish to conceal. You will be alerted if the image you selected is too small to convey your message.<br /><br />
-              &#x2022; Both the image and the message you conceal won't ever be sent over the internet.
+    </div>
 
 
-            </p>
-            <form class="form">
-              <div class="form-group">
-                <input
-                  class="form-control"
-                  type="file"
-                  name="baseFile"
-                  onchange="previewEncodeImage()"
-                />
-              </div>
 
-              <div class="form-group">
-                <textarea
-                  class="form-control message"
-                  rows="3"
-                  placeholder="Enter your message here"
-                ></textarea>
-              </div>
-
-              <div class="form-group" id="encode-button">
-                <button
-                  class="encode btn btn-default pull-right"
-                  onclick="encodeMessage()"
-                >
-                  Encode
-                </button>
-              </div>
-            </form>
-            <div class="clearfix"></div>
-          </div>
-
-          <div class="error" style="display: none"></div>
-          <div class="binary" style="display: none">
-            <h3>Binary representation of your message</h3>
-            <textarea
-              class="form-control message"
-              style="word-wrap: break-word"
-            >
-            </textarea>
-          </div>
-          <div class="images" style="display: none">
-            <div class="original" style="display: none">
-              <h3>Original</h3>
-              <canvas></canvas>
+    <div id="my-tab-content" class="container tab-content">
+      <div class="tab-pane active" id="encode">
+        <div>
+          <h2>Encode Message</h2>
+          <form class="form">
+            <div class="form-group">
+              <input class="form-control" type="file" name="baseFile" onchange="previewEncodeImage()" />
             </div>
-            <div class="nulled" style="display: none">
-              <h3>Normalized</h3>
-              <canvas></canvas>
+
+            <div class="form-group">
+              <textarea class="form-control message" rows="8" placeholder="Enter your message here"></textarea>
             </div>
-            <div class="message" style="display: none">
-              <h3>
-                Message hidden in image (Right Click
-                <span class="glyphicon glyphicon-arrow-right"></span> Save as)
-              </h3>
-              <canvas></canvas>
+
+            <div class="form-group" id="encode-button">
+              <button class="encode btn btn-default pull-right" onclick="encodeMessage()">
+                Encode
+              </button>
             </div>
-          </div>
+          </form>
+          <div class="clearfix"></div>
         </div>
 
-        <div class="tab-pane" id="decode">
-          <div>
-            <h2>Decode Image</h2>
-            <p class="alert alert-info">
-              &#x2022; To decode a hidden message from an image, just choose an image and
-              hit the <strong>Decode</strong> button.<br /><br />
-              &#x2022; Both the image and the message you conceal won't ever be sent over the internet.
-            </p>
-            <form class="form">
-              <div class="form-group">
-                <input
-                  class="form-control"
-                  type="file"
-                  name="decodeFile"
-                  onchange="previewDecodeImage()"
-                />
-              </div>
-              <div class="form-group">
-                <button
-                  class="decode btn btn-default pull-right"
-                  onclick="decodeMessage()"
-                >
-                  Decode
-                </button>
-              </div>
-            </form>
-            <div class="clearfix"></div>
-          </div>
-          <div class="binary-decode" style="display: none">
-            <h3>Hidden message</h3>
-            <textarea
-              class="form-control message"
-              style="word-wrap: break-word"
-            >
+        <div class="error" style="display: none"></div>
+        <div class="binary" style="display: none">
+          <h3>Binary representation of your message</h3>
+          <textarea class="form-control message" style="word-wrap: break-word">
             </textarea>
+        </div>
+        <div class="images" style="display: none">
+          <div class="original" style="display: none">
+            <h3>Original</h3>
+            <canvas></canvas>
           </div>
-          <div class="decode" style="display: none">
-            <h3>Image</h3>
+          <div class="nulled" style="display: none">
+            <h3>Normalized</h3>
+            <canvas></canvas>
+          </div>
+          <div class="message" style="display: none">
+            <h3>
+              Message hidden in image (Right Click
+              &rarr; Save as)
+            </h3>
             <canvas></canvas>
           </div>
         </div>
       </div>
+
+      <div class="tab-pane" id="decode">
+        <div>
+          <h2>Decode Image</h2>
+          <p class="alert alert-info">
+            Choose the image from which you want to decode the message.
+          </p>
+          <form class="form">
+            <div class="form-group">
+              <input class="form-control" type="file" name="decodeFile" onchange="previewDecodeImage()" />
+            </div>
+            <div class="form-group">
+              <button class="decode btn btn-default pull-right" onclick="decodeMessage()">
+                Decode
+              </button>
+            </div>
+          </form>
+          <div class="clearfix"></div>
+        </div>
+        <div class="binary-decode" style="display: none">
+          <h3>Hidden message</h3>
+          <textarea class="form-control message" style="word-wrap: break-word">
+            </textarea>
+        </div>
+        <div class="decode" style="display: none">
+          <h3>Image</h3>
+          <canvas></canvas>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="about">
+        <div class="text">
+
+         <h2> Steganography</h2>
+         <p class="alert alert-info">
+         Steganography is the practice of concealing a secret message within an ordinary message or file, without anyone else being aware that there is a hidden message. The goal of steganography is to hide the existence of the message, so that it can be transmitted undetected. Unlike cryptography, which relies on encryption to make a message unreadable to anyone who doesn't have the key, steganography does not alter the message in any way. Instead, it hides the message within the data of another file, such as an image or audio file, by subtly changing certain bits of information. Steganography can be used for a variety of purposes, from covert communication to digital watermarking, and has been used throughout history in various forms.
+         </p>
+          <h2> To Encode</h2>
+          <p class="alert alert-info">
+            &#x2022; To encode a message into an image, choose the image you want to
+            use, enter your text and hit the <strong>Encode</strong> button.<br />
+
+            &#x2022; Keep in mind that the image needs to be larger the more text you wish to conceal. You will be
+            alerted if the image you selected is too small to convey your message.<br />
+            &#x2022; Both the image and the message you conceal won't ever be sent over the internet.
+          </p>
+
+          <h2> To Decode</h2>
+          <p class="alert alert-info">
+            &#x2022; To decode a hidden message from an image, just choose an image and
+            hit the <strong>Decode</strong> button.<br />
+            &#x2022; Both the image and the message you conceal won't ever be sent over the internet.
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 
     <script src="src/jquery.min.js"></script>
     <script src="src/bootstrap.min.js"></script>
