@@ -17,11 +17,11 @@ We have created a website which provides functionality to encode a message in an
 
 
 ### Screenshot 📸
-![StegifyWebsite](https://user-images.githubusercontent.com/99413629/224557892-ac0d4e9a-3ee0-4584-baec-2cb3e95015ed.png)
+![StegifyWebsite](https://user-images.githubusercontent.com/99413629/236607719-9c737354-6343-4b64-82cf-4772f848664f.png)
 <hr>
 
 
-### About Steganography 
+### About Steganography 📝
 **Steganography** is the practice of concealing a secret message within an ordinary message or file, without anyone else being aware that there is a hidden message. The goal of steganography is to hide the existence of the message, so that it can be transmitted undetected. Unlike cryptography, which relies on encryption to make a message unreadable to anyone who doesn't have the key, steganography does not alter the message in any way. Instead, it hides the message within the data of another file, such as an image or audio file, by subtly changing certain bits of information. Steganography can be used for a variety of purposes, from covert communication to digital watermarking, and has been used throughout history in various forms.
 <hr>
 
