@@ -2,6 +2,18 @@ $("button.encode, button.decode").click(function (event) {
   event.preventDefault();
 });
 
+// Event listener for the Download Button for Encode Image
+$("#downloadButton").click(function () {
+  var canvas = document.querySelector(".message canvas");
+  var image = canvas
+    .toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+  var link = document.createElement("a");
+  link.download = "EncodedImage.png";
+  link.href = image;
+  link.click();
+});
+
 /* This function grabs the input file with name attribute "decodeFile" and gets the first selected element.
    Next, it calls the previewImage() function to read the contents of the file and render them in a canvas element with "decode canvas" class.
    Lastly, it uses jQuery to fade-in the element with "decode" class once the image is rendered.
@@ -155,6 +167,7 @@ function encodeMessage() {
   $(".binary").fadeIn();
   $(".images .nulled").fadeIn();
   $(".images .message").fadeIn();
+  $("#downloadButton").removeClass("hiddenDownloadButton");
 }
 
 /*
