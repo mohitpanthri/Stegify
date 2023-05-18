@@ -1,5 +1,5 @@
 body {
-  background-image: url("background/Animatedbg.svg");
+  background-image: url("/background/Animatedbg.svg");
   background-size: contain;
   background-repeat: repeat;
 }
