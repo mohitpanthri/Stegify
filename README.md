@@ -9,8 +9,8 @@ We have created a website which provides functionality to encode a message in an
 
 <div align="center"> 
 
-## Watch the Live [Demo](https://stegify.netlify.app/)  
-<sup>**Status:**</sup>  [![Netlify Status](https://api.netlify.com/api/v1/badges/1a237f2f-9601-4cf7-a1f7-baf667d32663/deploy-status)](https://app.netlify.com/sites/stegify/deploys)
+## Watch the Live [Demo](https://stegify-web.netlify.app/)  
+<sup>**Status:**</sup>  [![Netlify Status](https://api.netlify.com/api/v1/badges/575c9f74-a0d5-4450-bc31-ccd6126b9c7c/deploy-status)](https://app.netlify.com/sites/stegify-web/deploys)
 </div> 
 
 <br>
